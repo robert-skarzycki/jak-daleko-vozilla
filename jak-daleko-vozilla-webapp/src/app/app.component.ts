@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CarsProvider } from 'src/data/CarsProvider';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'jak-daleko-vozilla-webapp';
+
+  private carsProvider: CarsProvider = new CarsProvider();
+  private home: Home
+
+  ngOnInit() {
+
+  }
 }
