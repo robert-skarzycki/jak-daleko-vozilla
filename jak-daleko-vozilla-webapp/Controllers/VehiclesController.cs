@@ -1,4 +1,6 @@
 ﻿using System.Collections.Generic;
+using System.Threading.Tasks;
+using jak_daleko_vozilla_webapp.Logic;
 using jak_daleko_vozilla_webapp.Model;
 using Microsoft.AspNetCore.Mvc;
 
@@ -7,15 +9,13 @@ namespace jak_daleko_vozilla_webapp.Controllers
     [Route("api/[controller]")]
     public class VehiclesController : Controller
     {
+        private readonly VehiclesFinder _vehiclesFinder = new VehiclesFinder();
+
 
         [HttpGet("[action]")]
-        public IEnumerable<Vehicle> NearestVehicles()
+        public Task<IEnumerable<Vehicle>> NearestVehicles()
         {
-            return new[] {new Vehicle{
-                PlatesNumber= "DW12345",
-                Distance = 1234.2,
-                SideNumber = "1234"
-            } };
+            return _vehiclesFinder.FindNearestVehicles();
         }        
     }
 }

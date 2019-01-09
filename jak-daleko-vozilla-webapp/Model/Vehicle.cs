@@ -6,5 +6,6 @@
         public string SideNumber { get; set; }
         public Location Location { get; set; }
         public double Distance { get; set; }
+        public VehicleStatus Status { get; set; }
     }
 }

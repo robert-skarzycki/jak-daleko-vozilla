@@ -19,4 +19,5 @@ interface Vehicle {
   platesNumber: string;
   sideNumber: string;
   distance: number;
+  status: string;
 }
