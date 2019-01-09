@@ -2,7 +2,7 @@
 
 <p *ngIf="!vehicles"><em>Loading...</em></p>
 
-<table class='table table-striped' *ngIf="forecasts">
+<table class='table table-striped' *ngIf="vehicles">
   <thead>
     <tr>
       <th>Plates number</th>
@@ -12,9 +12,9 @@
   </thead>
   <tbody>
     <tr *ngFor="let vehicle of vehicles">
-      <td>{{ forecast.platesNumber }}</td>
-      <td>{{ forecast.sideNumber }}</td>
-      <td>{{ forecast.distance }}</td>
+      <td>{{ vehicle.platesNumber }}</td>
+      <td>{{ vehicle.sideNumber }}</td>
+      <td>{{ vehicle.distance }}</td>
     </tr>
   </tbody>
 </table>
