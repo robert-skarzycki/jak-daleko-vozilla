@@ -1,8 +1,18 @@
 const axios = require('axios');
 const {
-    GeoCoordinate,
-    BoundingBox
+    GeoCoordinate
 } = require('geocoordinate');
+
+const Vehicle = function (vehicleObject) {
+    var self = this;
+
+    return Promise.resolve({
+        status: vehicleObject.status,
+        sideNumber: vehicleObject.sideNumber,
+        platesNumber: vehicleObject.platesNumber,
+        rangeKm: vehicleObject.rangeKm
+    });
+};
 
 const VehicleFinder = function () {
     const self = this;
@@ -23,9 +33,11 @@ const VehicleFinder = function () {
                     return home.distanceTo(vehicleLocation) < 1500;
                 });
 
-                return {
-                    nearestVehicles: vehiclesInArea
-                };
+                return Promise.all(vehiclesInArea.map(v => new Vehicle(v))).then(vehicles => {
+                    return {
+                        nearestVehicles: vehicles
+                    };
+                });
             })
     };
 
