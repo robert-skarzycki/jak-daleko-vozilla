@@ -5,7 +5,7 @@ $(
             var html = '';
             for (var i = 0; i < data.nearestVehicles.length; i++) {
                 var vehicle = data.nearestVehicles[i];
-                html += '<p>' + vehicle.sideNumber + ' ' + vehicle.platesNumber + ' ' + vehicle.rangeKm + ' km ' + vehicle.status + '</p>';
+                html += '<p><b>' + vehicle.distance + ' metrów</b>' + vehicle.sideNumber + ' ' + vehicle.platesNumber + ' ' + vehicle.rangeKm + ' km ' + vehicle.status + '</p>';
             }
 
             $container.html(html);
