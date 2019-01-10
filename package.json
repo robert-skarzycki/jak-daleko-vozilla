@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/robert-skarzycki/jak-daleko-vozilla/issues"
   },
-  "homepage": "https://github.com/robert-skarzycki/jak-daleko-vozilla#readme"
+  "homepage": "https://github.com/robert-skarzycki/jak-daleko-vozilla#readme",
+  "dependencies": {
+    "dotenv": "^6.2.0",
+    "express": "^4.16.4"
+  }
 }
