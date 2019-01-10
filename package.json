@@ -17,7 +17,9 @@
   },
   "homepage": "https://github.com/robert-skarzycki/jak-daleko-vozilla#readme",
   "dependencies": {
+    "axios": "^0.18.0",
     "dotenv": "^6.2.0",
-    "express": "^4.16.4"
+    "express": "^4.16.4",
+    "geocoordinate": "^1.1.1"
   }
 }
